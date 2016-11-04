@@ -1,6 +1,34 @@
+// color variables
+$primary= #00BBD3
+$secondary= #78AF3B
+$tertiary= #1B6368
+
+$header= #1B6368
+
+
 .App
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: "Roboto", Helvetica, Arial, sans-serif
   text-align: center
 
-  &-Greeting
-    font-size: 4em
+body
+  background: #F3F3F3
+
+.Body
+  width: 100%
+  height: 100%
+
+
+.ComponentHeader, .SectionHeader
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6
+    color: $tertiary
+
+  &.left
+    text-align: left
+
+  &.center
+    text-align: center
+
+  &.right
+    text-align: right
+

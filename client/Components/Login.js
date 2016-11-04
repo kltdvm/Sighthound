@@ -2,8 +2,8 @@ import React from 'react';
 
 class Login extends React.Component {
 
-  constructor (props, context) {
-    super(props, context);
+  constructor (props) {
+    super(props);
     this.handleLogin = this.handleLogin.bind(this);
   }
 

@@ -1,0 +1,34 @@
+.Wizard
+  width: 100%
+
+  form
+    height: 100%
+    width: 100%
+    position: relative
+
+  .StepOne
+    transform: translate(-100%, 0)
+
+  .StepTwo, .StepThree
+    transform: translate(100%, 0)
+
+  .is-step-1
+    .StepOne
+      transform: translate(0, 0)
+      opacity: 1
+  
+  .is-step-2
+    .StepOne
+      transform: translate(-100%, 0)
+    .StepTwo
+      transform: translate(0, 0)
+      opacity: 1
+
+  .is-step-3
+    .StepOne
+      transform: translate(-100%, 0)
+    .StepTwo
+      transform: translate(-100%, 0)
+    .StepThree
+      transform: translate(0, 0)
+      opacity: 1
