@@ -5,14 +5,13 @@ import { isLoggedIn, isGuest } from '../Services/AuthMiddleware';
 import App from './App';
 import Login from './Login';
 import Dashboard from './Dashboard';
-import DashboardNav from './DashboardNav';
+import CaseSubmission from './CaseSubmission';
 
 export default function (store) {
   return (
       <Route component={App}>
-        <Route component={DashboardNav} onEnter={isLoggedIn(store)}>
-          <Route path='/' component={Dashboard} />
-        </Route>
+        <Route path='/' component={Dashboard} />
+        <Route path='/new' component={CaseSubmission} />
         <Route onEnter={isGuest(store)}>
           <Route path='/login' component={Login} />
         </Route>
