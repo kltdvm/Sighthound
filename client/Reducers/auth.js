@@ -1,7 +1,7 @@
 const defaultState = {};
 
 export default function (state = defaultState, action) {
-  let newState;
+  let newState = Object.assign({}, state);
 
   switch (action.type) {
     case 'ATTEMPTING_AUTH':
@@ -16,8 +16,6 @@ export default function (state = defaultState, action) {
     case 'AUTH_LOGOUT':
       newState = {};
       break;
-    default:
-      newState = Object.assign({}, state);
   }
 
   return newState;
