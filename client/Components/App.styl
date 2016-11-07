@@ -5,6 +5,9 @@ $tertiary= #1B6368
 
 $header= #1B6368
 
+$light-gray= rgba(0,0,0, 0.12)
+$dark-gray= rgba(0,0,0, 0.26)
+
 
 .App
   font-family: "Roboto", Helvetica, Arial, sans-serif
@@ -14,21 +17,38 @@ body
   background: #F3F3F3
 
 .Body
-  width: 100%
+  width: 94%
+  max-width: 800px
   height: 100%
+  margin-top: 104px
 
+
+*
+  -webkit-tap-highlight-color: transparent
 
 .ComponentHeader, .SectionHeader
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6
     color: $tertiary
+    margin-bottom: 0
 
-  &.left
-    text-align: left
+// text-align helper methods
+&.left
+  text-align: left
 
-  &.center
-    text-align: center
+&.center
+  text-align: center
 
-  &.right
-    text-align: right
+&.right
+  text-align: right
+
+// margin helper methods
+&.margin-bottom-small
+  margin-bottom: 0.5em
+
+&.margin-bottom-large
+  margin-bottom: 3em
+
+&.margin-top-large
+  margin-top: 3em
 
