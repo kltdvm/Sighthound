@@ -1,5 +1,5 @@
 const defaultState = {
-  currentStep: 1,
+  currentStep: 2,
 
   steps: [
     {
@@ -22,6 +22,8 @@ export default function (state = defaultState, action) {
 
   switch (action.type) {
     case 'NEXT_STEP':
+      console.log('reducer says: ', action);
+      
       newState.currentStep = action.currentStep + 1 ;
       break;
     case 'PREVIOUS_STEP':
