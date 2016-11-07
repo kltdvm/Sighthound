@@ -10,9 +10,9 @@ class Wizard extends React.Component {
     return (
       <div className="Wizard" >
         <form className={"is-step-" + this.props.newCase.currentStep} >
-          <StepOne {...this.props.newCase} />
-          <StepTwo {...this.props.newCase} />
-          <StepThree {...this.props.newCase} />
+          <StepOne {...this.props} />
+          <StepTwo {...this.props} />
+          <StepThree {...this.props} />
         </form>
       </div>
     );

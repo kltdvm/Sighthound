@@ -10,8 +10,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    nextStep: nextStep,
-    previousStep: previousStep,
+    nextStep: (currentStep) => nextStep(currentStep)(dispatch),
     goToStep: (newStep) => goToStep(newStep)(dispatch)
   };
 }

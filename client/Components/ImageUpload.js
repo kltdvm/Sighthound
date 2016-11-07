@@ -6,7 +6,7 @@ class ImageUpload extends React.Component {
 
   constructor (props, context) {
     super(props, context);
-    this.state = { uploadedImages: ['example.jpg'] };
+    this.state = { uploadedImages: [] };
     this.renderImage = this.renderImage.bind(this);
     this.renderUploader = this.renderUploader.bind(this);
     this.renderPlaceholder = this.renderPlaceholder.bind(this);
@@ -18,8 +18,21 @@ class ImageUpload extends React.Component {
   }
 
   renderImage (image, i) {
+    image = "/images/dog-eye-2.jpg"
     return (
-      <img src={image} alt='' key={'image-' + i} />
+      <div>
+        <img src={image} alt='' key={'image-' + i} className="mdl-button--raised" />
+      </div>
+    );
+  }
+
+  renderCoverImage (image, i) {
+    image = "/images/dog-eye-2.jpg"
+    return (
+      <div key={'image-' + i} >
+        <div className="mdl-button--raised"  > 
+        </div>
+      </div>
     );
   }
 
@@ -35,12 +48,19 @@ class ImageUpload extends React.Component {
   }
 
   renderPlaceholder (_, i) {
-    console.log('rendering placeholder');
     return (
-      <div key={'placeholder-' + i} className="placeholder" >
-        <i className="material-icons">photo_camera</i>
-      </div>
+      <FileInput
+        disabled
+        key={"placeholder-" + i}
+        name="leftImage1"
+        accept="image/*"
+        className="imageUploadInput "
+        onChange={this.handleChange} />
     );
+  }
+
+  handleRemove () {
+    // todo: clear inputs and remove images from db
   }
 
   render () {
@@ -52,12 +72,15 @@ class ImageUpload extends React.Component {
     ];
 
     const placeholderCount = (maxUploads - 1) - uploadedImages.length;
-    const placeholders = new Array(Math.max(0, placeholderCount)); 
+    const placeholders = Array.apply(null, { length: placeholderCount }).map(function (_, i) {
+      return (<div />);
+    });
 
     return (
       <div className={classNames(imageUploadClasses)} >
-        <div className="ComponentHeader left">
-          <h6>Left Eye</h6>
+        <div className="ComponentHeader left margin-bottom-small">
+          <h6>{this.props.title}</h6>
+          <span onClick={this.handleRemove} >Remove All</span>
         </div>
         <div className="imageInputs">
           {uploadedImages.map(this.renderImage)}
