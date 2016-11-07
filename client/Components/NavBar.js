@@ -12,7 +12,7 @@ class NavBar extends React.Component {
       <div className="NavBar mdl-layout__header">
         <header className="mdl-layout__header-row mdl-color--cyan" >
           <Hamburger />
-          <h2><a href="/">Sighthound</a></h2>
+          <h2 className="left"><a href="/">SightHound</a></h2>
           <UserAcct />
         </header>
       </div>
