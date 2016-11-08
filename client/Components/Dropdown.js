@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import Select from 'react-select';
+import Select from 'react-dropdown';
 
 class Dropdown extends React.Component {
 
@@ -9,16 +9,7 @@ class Dropdown extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  createOptions () {
-    const options = this.props.options;
-    const optionsArray = [];
-    
-    for (var option = 0; option < options.length; option++) {
-      optionsArray.push(<option key={options[option].id} className={!options[option].value ? "placeholder" : ""} value={options[option].value} >{options[option].name}</option>)
-    }
 
-    return optionsArray;
-  }
 
   handleChange (value) {
     console.log('select value is: ', value);
@@ -26,12 +17,13 @@ class Dropdown extends React.Component {
 
 
   render () {
-    const options = []
-    const optionsState = this.props.optionsState
 
     const dropdownClasses = [
       "Dropdown",
-      "mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+      "Input",
+      "mdl-textfield mdl-js-textfield mdl-textfield--floating-label",
+      "left",
+      this.props.classes
     ];
 
     return (
@@ -39,9 +31,13 @@ class Dropdown extends React.Component {
         <label className="mdl-textfield__label" >
           <i className="material-icons">keyboard_arrow_down</i>  
         </label>
-        <select value={optionsState} onChange={this.handleChange(this.props.onChange)}>
-          {this.createOptions()}
-        </select>
+        <Select
+          className={{'dirty': this.props.value}}
+          name={this.props.inputName}
+          placeholder={this.props.inputName}
+          options={this.props.options}
+          onChange={this.handleChange}
+        />
       </div>
     );
   }
