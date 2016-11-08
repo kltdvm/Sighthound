@@ -20,29 +20,25 @@ class StepTwo extends React.Component {
 
     const sexOptions = [
       {
-        id: 0,
-        name: "Sex"
-      },
-      {
         id: 1,
-        name: "Male",
+        label: "Male",
         value: "male"
       },
       {
         id: 2,
-        name: "Female",
+        label: "Female",
         value: "female"
       }
     ] 
 
     return (
       <div className={classNames(stepClasses)} step={step}>
-        <Section>
+        <Section classes="left">
           <SectionHeader sectionTitle="Patient Information" />
           <TextInput inputName="Patient First Name" inputRef={c => this.firstName = c} />
           <TextInput inputName="Last Name" inputRef={c => this.lastName = c} />
-          <NumberInput inputName="Age Yrs" inputRef={c => this.ageYrs = c} />
-          <Dropdown inputName="Sex" inputRef={c => this.ageYrs = c} options={sexOptions} />
+          <NumberInput inputName="Age Yrs" inputRef={c => this.ageYrs = c} classes="one-quarter" />
+          <Dropdown inputName="Sex" inputRef={c => this.ageYrs = c} options={sexOptions} value="something" classes="one-third" />
           <NextStep {...this.props} />
         </Section>
       </div>

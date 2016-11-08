@@ -7,7 +7,9 @@ class NumberInput extends React.Component {
   render () {
     const numberInputClasses = [
       "NumberInput",
-      "mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+      "Input",
+      "mdl-textfield mdl-js-textfield mdl-textfield--floating-label",
+      this.props.classes
     ];
 
     return (

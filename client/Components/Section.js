@@ -6,7 +6,8 @@ class Section extends React.Component {
 
   render () {
     const sectionClasses = [
-      "Section"
+      "Section",
+      this.props.classes
     ];
 
     return (

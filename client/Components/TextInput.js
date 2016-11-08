@@ -7,6 +7,7 @@ class TextInput extends React.Component {
   render () {
     const textInputClasses = [
       "TextInput",
+      "Input",
       "mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
     ];
 
