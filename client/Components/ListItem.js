@@ -8,7 +8,7 @@ class ListItem extends React.Component {
   render () {
     return (
       <li className="ListItem mdl-list__item mdl-button--raised" >
-        <div className="ComponentHeader" >
+        <div className="ComponentHeader left" >
           <div className="h6" >
             Mr. Snugglesworthington
           </div>

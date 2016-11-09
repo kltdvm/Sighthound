@@ -9,8 +9,8 @@ class CaseList extends React.Component {
 
   render () {
     return (
-      <div className="CaseList mdl-cell mdl-cell--12-col" >
-        <ListHeader />
+      <div className="CaseList" >
+        <ListHeader classes={"left"} />
         <ListComponent />
       </div>
     );

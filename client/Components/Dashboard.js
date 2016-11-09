@@ -11,7 +11,6 @@ class Dashboard extends React.Component {
         <NavBar />
         <NewCaseButton />
         <div className="mdl-grid Body" >
-          <CaseList />
         </div>
       </div>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 class ListHeader extends React.Component {
   constructor (props) {
@@ -6,8 +7,14 @@ class ListHeader extends React.Component {
   }
 
   render () {
+    const inputGroupClasses = [
+      "ListHeader",
+      "ComponentHeader",
+      this.props.classes
+    ];
+
     return (
-      <div className="ListHeader ComponentHeader">
+      <div className={classNames(inputGroupClasses)}>
         <h4>List Header</h4>
       </div>
     );
