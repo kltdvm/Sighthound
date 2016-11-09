@@ -38,7 +38,10 @@ class StepTwo extends React.Component {
           <TextInput inputName="Patient First Name" inputRef={c => this.firstName = c} />
           <TextInput inputName="Last Name" inputRef={c => this.lastName = c} />
           <NumberInput inputName="Age Yrs" inputRef={c => this.ageYrs = c} classes="one-quarter" />
-          <Dropdown inputName="Sex" inputRef={c => this.ageYrs = c} options={sexOptions} value="something" classes="one-third" />
+          <NumberInput inputName="Months" inputRef={c => this.ageYrs = c} classes="one-quarter" />
+          <Dropdown inputName="Sex" inputRef={c => this.ageYrs = c} options={sexOptions} value="something" classes="one-third float-right" />
+          <TextInput inputName="Species" inputRef={c => this.firstName = c} classes="one-half" />
+          <TextInput inputName="Breed" inputRef={c => this.lastName = c} classes="one-half float-right" />
           <NextStep {...this.props} />
         </Section>
       </div>

@@ -1,5 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import Section from './Section';
+import SectionHeader from './SectionHeader';
+import Accordion from './Accordion';
+import InputGroup from './InputGroup';
+import NextStep from './NextStep';
 
 class StepThree extends React.Component {
 
@@ -14,7 +19,12 @@ class StepThree extends React.Component {
 
     return (
       <div className={classNames(stepClasses)} step={step}>
-        Step Three
+        <Section classes="left">
+          <SectionHeader sectionTitle="Clinical Signs" />
+          <Accordion {...this.props} groups={this.props.newCase.info.clinicalSigns} >
+          </Accordion>
+          <NextStep {...this.props} />
+        </Section>
       </div>
     );
   }
