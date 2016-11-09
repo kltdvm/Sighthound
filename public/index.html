@@ -12,6 +12,18 @@
   </head>
   <body>
     <main id="app"></main>
+    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCyYnorOoPSqa8JGY5IDVKDtvDv-TaAySQ",
+        authDomain: "sighthound-4bc28.firebaseapp.com",
+        databaseURL: "https://sighthound-4bc28.firebaseio.com",
+        storageBucket: "sighthound-4bc28.appspot.com",
+        messagingSenderId: "736628495867"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="/material.min.js"></script>
     <script src="/app.js"></script>
   </body>
